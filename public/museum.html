@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Музеи</title>
+    <link rel="stylesheet" href="css/museum.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="site-title">Список музеев</h1>
+
+    <div class="search-container">
+      <div class="search-inputs">
+        <input
+          type="text"
+          id="search-name"
+          placeholder="Название музея"
+          class="input-field"
+        />
+        <input
+          type="text"
+          id="search-keywords"
+          placeholder="Ключевые слова (через запятую)"
+          class="input-field"
+        />
+      </div>
+
+      <div class="custom-select" id="region-select">
+        <div class="select-selected">Выберите регионы</div>
+        <div class="select-items">
+          <div data-value="Тула">Тула</div>
+          <div data-value="Щекино">Щекино</div>
+          <div data-value="Курковский район">Курковский район</div>
+          <div data-value="Заокский район">Заокский район</div>
+        </div>
+      </div>
+
+      <div class="custom-select" id="type-select">
+        <div class="select-selected">Выберите типы музеев</div>
+        <div class="select-items">
+          <div data-value="Исторический">Исторический</div>
+          <div data-value="Промышленный">Промышленный</div>
+          <div data-value="Музыкальный">Музыкальный</div>
+          <div data-value="Кулинарный">Кулинарный</div>
+          <div data-value="Краеведческий">Краеведческий</div>
+          <div data-value="Культурный">Культурный</div>
+          <div data-value="Литературный">Литературный</div>
+          <div data-value="Научный">Научный</div>
+          <div data-value="Художественный">Художественный</div>
+        </div>
+      </div>
+      <input type="date" id="search-date" class="input-field" />
+      <div class="custom-select" id="accessibility-select">
+        <div class="select-selected">Выберите доступность</div>
+        <div class="select-items">
+          <div data-value="слух">Нарушение слуха</div>
+          <div data-value="зрение">Нарушение зрения</div>
+          <div data-value="коляска">Инвалидная коляска</div>
+        </div>
+      </div>
+      <div class="buttons-style">
+        <button id="search-button">Найти</button>
+        <button id="reset-button">Сбросить</button>
+      </div>
+    </div>
+
+    <div id="museum-list" class="museum-grid"></div>
+
+    <div class="button-container">
+      <button class="select-button" id="select-button">Поехать сейчас</button>
+      <button class="view-route-button" id="view-route-button">
+        Посмотреть маршрут
+      </button>
+    </div>
+
+    <script src="js/museum.js" type="text/javascript"></script>
+  </body>
+</html>

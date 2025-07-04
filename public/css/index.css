@@ -1,0 +1,229 @@
+#map-tula {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+select {
+  display: none;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-selected {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  z-index: 99;
+  display: none;
+}
+
+.select-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  background-color: #e0f7e0;
+}
+
+.select-items div.selected {
+  background-color: #c8e6c9;
+}
+
+#museum-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.museum-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.museum-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.museum-checkbox:checked {
+  accent-color: #c8e6c9;
+}
+
+.museum-item label {
+  font-family: Arial, sans-serif;
+  font-size: medium;
+}
+
+#buttons,
+#slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+button {
+  margin-left: 5px;
+}
+
+#slider {
+  flex-direction: column;
+  align-items: center;
+}
+
+label[for="radius-slider"] {
+  margin-bottom: 10px;
+}
+
+.select-button,
+.view-route-button,
+#search-button,
+#reset-button,
+#build-walk,
+#build-car,
+#build-masstransit,
+#build-bicycle,
+#build-taxi,
+#build-radius {
+  padding: 12px;
+  font-size: medium;
+  border-radius: 5px;
+  border: none;
+  background-color: #c8e6c9;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select-button:hover,
+.view-route-button:hover,
+#search-button:hover,
+#reset-button:hover,
+#build-walk:hover,
+#build-car:hover,
+#build-masstransit:hover,
+#build-bicycle:hover,
+#build-taxi:hover,
+#build-radius:hover {
+  background-color: #b2dfdb;
+}
+
+.custom-balloon {
+  width: 200px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-balloon h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-balloon p {
+  font-size: 14px;
+  color: #666;
+}
+
+.custom-balloon img {
+  max-width: 100%;
+  height: auto;
+}
+
+#value-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#min-value,
+#max-value {
+  flex: 1;
+}
+
+#current-value {
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #map-tula {
+    height: 50vh;
+  }
+
+  #buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #buttons button {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  #slider {
+    width: 100%;
+  }
+
+  #radius-slider {
+    width: 100%;
+  }
+
+  .select-button,
+  .view-route-button,
+  #search-button,
+  #reset-button,
+  #build-walk,
+  #build-car,
+  #build-masstransit,
+  #build-bicycle,
+  #build-taxi,
+  #build-radius {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .custom-balloon {
+    width: 150px;
+  }
+
+  .custom-balloon h3 {
+    font-size: 14px;
+  }
+
+  .custom-balloon p {
+    font-size: 12px;
+  }
+}

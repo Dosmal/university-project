@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Яндекс Карта</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div id="map-tula" style="width: 100%; height: 500px"></div>
+
+    <div id="museum-list"></div>
+
+    <div id="buttons">
+      <button id="build-walk">Построить пешком</button>
+      <button id="build-car">Построить на авто</button>
+      <button id="build-masstransit">
+        Построить на общественном транспорте
+      </button>
+      <button id="build-bicycle">Построить на велосипеде</button>
+      <button id="build-taxi">Построить на такси</button>
+    </div>
+
+    <div id="slider">
+      <label for="radius-slider">Радиус (метры): </label>
+      <input
+        type="range"
+        id="radius-slider"
+        min="100"
+        max="5000"
+        step="100"
+        value="100"
+        oninput="updateSliderValue()"
+      />
+      <div>
+        <span id="min-value">100м</span>
+        <span id="current-value">100м</span>
+        <span id="max-value">5000м</span>
+      </div>
+      <button id="build-radius">Построить окружность</button>
+    </div>
+    <script>
+      function updateSliderValue() {
+        const slider = document.getElementById("radius-slider");
+        const currentValueDisplay = document.getElementById("current-value");
+        currentValueDisplay.textContent = `${slider.value}м`;
+      }
+      updateSliderValue();
+    </script>
+
+    <script
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_UA&apikey=e4ed73dd-8264-43e4-b4bb-404f2aad5d7b"
+      type="text/javascript"
+    ></script>
+    <script src="js/index.js" type="text/javascript"></script>
+
+    <script type="text/html" id="custom-balloon-template">
+      <div class="custom-balloon">
+        <h3>{{ properties.name }}</h3>
+        <p>{{ properties.description }}</p>
+        <img src="{{ properties.image }}" alt="{{ properties.name }}" />
+      </div>
+    </script>
+  </body>
+</html>

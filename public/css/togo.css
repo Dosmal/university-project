@@ -1,0 +1,240 @@
+#map-tula {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Основные стили для всего сайта */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Стили для селектов */
+select {
+  display: none;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-selected {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  z-index: 99;
+  display: none;
+}
+
+.select-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  background-color: #e0f7e0;
+}
+
+.select-items div.selected {
+  background-color: #c8e6c9;
+}
+
+/* Стили для списка музеев */
+#museum-list {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: flex-start; /* Выравнивание по левому краю */
+  margin-top: 20px; /* Отступ сверху для списка музеев */
+}
+
+/* Стили для элемента музея */
+.museum-item {
+  display: flex; /* Используем flexbox для выравнивания чекбокса и текста */
+  align-items: center; /* Центрируем элементы по вертикали */
+  margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+/* Стили для чекбоксов */
+.museum-checkbox {
+  width: 20px; /* Увеличиваем размер чекбокса */
+  height: 20px; /* Увеличиваем размер чекбокса */
+  margin-right: 10px; /* Отступ между чекбоксом и текстом */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+}
+
+/* Цвет галочки при выборе (зеленый цвет) */
+.museum-checkbox:checked {
+  accent-color: #c8e6c9; /* Цвет галочки при выборе (зеленый цвет) */
+}
+
+/* Стили для текста музеев (такой же шрифт, как у кнопок) */
+.museum-item label {
+  font-family: Arial, sans-serif; /* Шрифт такой же, как у кнопок */
+  font-size: medium; /* Размер шрифта такой же, как у кнопок */
+}
+
+/* Стили для кнопок и ползунка */
+#buttons,
+#slider {
+  display: flex;
+  justify-content: center; /* Центрируем кнопки и слайдер по горизонтали */
+  align-items: center; /* Центрируем элементы по вертикали внутри контейнера */
+  margin-top: 40px; /* Увеличен отступ сверху для контейнеров */
+  margin-bottom: 40px; /* Увеличен отступ снизу для контейнеров */
+}
+
+button {
+  margin-left: 5px; /* Отступ между кнопками */
+}
+
+#slider {
+  flex-direction: column; /* Вертикальное выравнивание метки и ползунка */
+  align-items: center; /* Центрируем элементы по горизонтали в слайдере */
+}
+
+label[for="radius-slider"] {
+  margin-bottom: 10px; /* Отступ снизу от метки к ползунку */
+}
+
+/* Стили для кнопок */
+.select-button,
+.view-route-button,
+#search-button,
+#reset-button,
+#build-walk,
+#build-car,
+#build-masstransit,
+#build-bicycle,
+#build-taxi,
+#build-radius {
+  padding: 12px; /* Уменьшены отступы для кнопок */
+  font-size: medium; /* Уменьшен размер шрифта кнопок */
+  border-radius: 5px; /* Закругляем углы кнопок */
+  border: none; /* Убираем границу по умолчанию */
+  background-color: #c8e6c9; /* Тусклый зеленый цвет для кнопок */
+  color: black; /* Цвет текста на кнопках */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  transition: background-color 0.3s ease; /* Плавный переход цвета фона при наведении */
+}
+
+.select-button:hover,
+.view-route-button:hover,
+#search-button:hover,
+#reset-button:hover,
+#build-walk:hover,
+#build-car:hover,
+#build-masstransit:hover,
+#build-bicycle:hover,
+#build-taxi:hover,
+#build-radius:hover {
+  background-color: #b2dfdb; /* Более темный цвет при наведении на кнопку */
+}
+
+.custom-balloon {
+  width: 200px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-balloon h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-balloon p {
+  font-size: 14px;
+  color: #666;
+}
+
+.custom-balloon img {
+  max-width: 100%;
+  height: auto;
+}
+#value-display {
+  display: flex;
+  justify-content: space-between; /* Space out min and max */
+  align-items: center; /* Center items vertically */
+  margin-top: 10px; /* Add some space above the value display */
+}
+
+#min-value,
+#max-value {
+  flex: 1; /* Allow min and max to take equal space */
+}
+
+#current-value {
+  text-align: center; /* Center the current value */
+  flex: 0 1 auto; /* Prevent it from growing or shrinking */
+}
+/* Существующие стили */
+/* ... (оставляем без изменений) ... */
+
+/* Добавляем медиа-запросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #map-tula {
+    height: 50vh; /* Уменьшаем высоту карты на мобильных устройствах */
+  }
+
+  #buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #buttons button {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  #slider {
+    width: 100%;
+  }
+
+  #radius-slider {
+    width: 100%;
+  }
+
+  .select-button,
+  .view-route-button,
+  #search-button,
+  #reset-button,
+  #build-walk,
+  #build-car,
+  #build-masstransit,
+  #build-bicycle,
+  #build-taxi,
+  #build-radius {
+    padding: 15px; /* Увеличиваем отступы для удобства нажатия на мобильных устройствах */
+    font-size: 16px; /* Увеличиваем размер шрифта для лучшей читаемости */
+  }
+
+  .custom-balloon {
+    width: 150px; /* Уменьшаем ширину балуна для мобильных устройств */
+  }
+
+  .custom-balloon h3 {
+    font-size: 14px;
+  }
+
+  .custom-balloon p {
+    font-size: 12px;
+  }
+}
